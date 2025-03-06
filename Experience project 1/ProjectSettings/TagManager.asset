@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Line
+  - End
+  - HitInfo
   layers:
   - Default
   - TransparentFX
