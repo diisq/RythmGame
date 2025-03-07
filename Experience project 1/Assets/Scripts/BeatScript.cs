@@ -29,19 +29,24 @@ public class BeatScript : MonoBehaviour
         if (isInRange && Input.GetKeyDown(KeyCode.Space))
         {
             float accuracy = CalculateAccuracy();
+
             Debug.Log($"Hit! Accuracy: {accuracy:F2}");
+
             if (accuracy > 0.8f)
             {
                 scoreText.text = "H I T";
             }
+
             if (accuracy > 0.6f && accuracy < 0.8f)
             {
                 scoreText.text = "eh";
             }
+
             if (accuracy <= 0.6f)
             {
                 scoreText.text = "S H I T";
             }
+
             Destroy(gameObject);
         }
     }
