@@ -7,6 +7,9 @@ TagManager:
   - Line
   - End
   - HitInfo
+  - J Beat
+  - K Beat
+  - L Beat
   layers:
   - Default
   - TransparentFX

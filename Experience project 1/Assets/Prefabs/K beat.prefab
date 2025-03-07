@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: K beat
       objectReference: {fileID: 0}
+    - target: {fileID: 3598291333774555600, guid: 6c427d0da340f444f80b2c516095ab06, type: 3}
+      propertyPath: m_TagString
+      value: K Beat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598291333774555601, guid: 6c427d0da340f444f80b2c516095ab06, type: 3}
+      propertyPath: beatType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3598291333774555604, guid: 6c427d0da340f444f80b2c516095ab06, type: 3}
       propertyPath: m_Sprite
       value: 

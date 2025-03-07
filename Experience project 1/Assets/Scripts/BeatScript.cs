@@ -10,6 +10,12 @@ public class BeatScript : MonoBehaviour
     private Rigidbody2D _rb;
     private bool isInRange;
     
+    [Range(0, 2), SerializeField] int beatType;
+    
+    KeyCode[] types = {KeyCode.J, KeyCode.K, KeyCode.L};
+
+    private KeyCode beatPressButton;
+
     // Inspector "public" variables
     [SerializeField] private float speed;
     [SerializeField] private Transform lineCenter; // Reference to the line's center
@@ -20,13 +26,15 @@ public class BeatScript : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         scoreText = GameObject.FindGameObjectWithTag("HitInfo").GetComponent<TextMeshProUGUI>();
         lineCenter = GameObject.FindGameObjectWithTag("Line").transform;
+
+        beatPressButton = types[beatType];
     }
 
     void Update()
     {
         _rb.velocity = new Vector2(-speed, 0);
 
-        if (isInRange && Input.GetKeyDown(KeyCode.Space))
+        if (isInRange && Input.GetKeyDown(beatPressButton))
         {
             float accuracy = CalculateAccuracy();
 
@@ -85,4 +93,6 @@ public class BeatScript : MonoBehaviour
         float accuracy = Mathf.Clamp01(1f - (distanceFromCenter / maxDistance));
         return Mathf.Max(accuracy, 0.1f); // Minimum score of 0.1
     }
+
+    
 }
