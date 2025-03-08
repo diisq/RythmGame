@@ -42,16 +42,22 @@ public class BeatScript : MonoBehaviour
 
             if (accuracy > 0.8f)
             {
-                scoreText.text = "H I T";
+                Instantiate(scoreText);
+
+                scoreText.text = "HIT";
             }
 
             if (accuracy > 0.6f && accuracy < 0.8f)
             {
+                Instantiate(scoreText);
+
                 scoreText.text = "eh";
             }
 
             if (accuracy <= 0.6f)
             {
+                Instantiate(scoreText);
+
                 scoreText.text = "S H I T";
             }
 
@@ -63,7 +69,7 @@ public class BeatScript : MonoBehaviour
     {
         if (other.CompareTag("Line"))
         {
-            GetComponent<SpriteRenderer>().color = Color.red; // Change color when in range
+            GetComponent<SpriteRenderer>().color = Color.gray; // Change color when in range
             isInRange = true;
         }
         else if (other.CompareTag("End"))
