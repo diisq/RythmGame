@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -15,17 +16,21 @@ public class BeatScript : MonoBehaviour
     KeyCode[] types = {KeyCode.J, KeyCode.K, KeyCode.L};
 
     private KeyCode beatPressButton;
+    
 
     // Inspector "public" variables
     [SerializeField] private float speed;
     [SerializeField] private Transform lineCenter; // Reference to the line's center
     [SerializeField] private Text scoreText;
+    [SerializeField] private Vector2 scoreTextSpawn;
+    [SerializeField] private Canvas canv;
+    [SerializeField] private Vector2 fixedTextSpawnPosition;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        scoreText = GameObject.FindGameObjectWithTag("HitInfo").GetComponent<Text>();
         lineCenter = GameObject.FindGameObjectWithTag("Line").transform;
+        canv = GameObject.FindGameObjectWithTag("Canv").GetComponent<Canvas>();
 
         beatPressButton = types[beatType];
     }
@@ -37,29 +42,21 @@ public class BeatScript : MonoBehaviour
         if (isInRange && Input.GetKeyDown(beatPressButton))
         {
             float accuracy = CalculateAccuracy();
-
             Debug.Log($"Hit! Accuracy: {accuracy:F2}");
 
-            if (accuracy > 0.8f)
-            {
-                Instantiate(scoreText);
-                scoreText.text = "PERFECT";
-            }
+            string displayText = accuracy > 0.8f ? "PERFECT" :
+                accuracy > 0.6f ? "eh" :
+                "shit";
 
-            if (accuracy > 0.6f && accuracy < 0.8f)
-            {
-                Instantiate(scoreText);
-                scoreText.text = "eh";
-            }
+            // Instantiate the text
+            var t = Instantiate(scoreText, canv.transform);
+            t.text = displayText;
 
-            if (accuracy <= 0.6f)
-            {
-                Instantiate(scoreText);
-                scoreText.text = "S H I T";
-            }
-
+            // **FORCE the text to spawn at the same position every time**
+            t.rectTransform.anchoredPosition = fixedTextSpawnPosition;
             Destroy(gameObject);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

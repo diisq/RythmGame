@@ -139,4 +139,7 @@ MonoBehaviour:
   beatType: 0
   speed: 4
   lineCenter: {fileID: 0}
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 2785897087707534872, guid: d68464905a280a5419b3ca2e299574e5, type: 3}
+  scoreTextSpawn: {x: -4.54, y: -2.46}
+  canv: {fileID: 0}
+  fixedTextSpawnPosition: {x: -12, y: 0}

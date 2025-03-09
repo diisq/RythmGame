@@ -19,6 +19,22 @@ PrefabInstance:
       propertyPath: beatType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3598291333774555601, guid: 6c427d0da340f444f80b2c516095ab06, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 2785897087707534872, guid: d68464905a280a5419b3ca2e299574e5, type: 3}
+    - target: {fileID: 3598291333774555601, guid: 6c427d0da340f444f80b2c516095ab06, type: 3}
+      propertyPath: scoreTextSpawn.x
+      value: -4.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598291333774555601, guid: 6c427d0da340f444f80b2c516095ab06, type: 3}
+      propertyPath: scoreTextSpawn.y
+      value: -2.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598291333774555601, guid: 6c427d0da340f444f80b2c516095ab06, type: 3}
+      propertyPath: fixedTextSpawnPosition.x
+      value: -2.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3598291333774555604, guid: 6c427d0da340f444f80b2c516095ab06, type: 3}
       propertyPath: m_Sprite
       value: 

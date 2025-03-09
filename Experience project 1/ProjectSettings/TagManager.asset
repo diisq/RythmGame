@@ -10,6 +10,7 @@ TagManager:
   - J Beat
   - K Beat
   - L Beat
+  - Canv
   layers:
   - Default
   - TransparentFX
