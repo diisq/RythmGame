@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class BeatScript : MonoBehaviour
@@ -19,12 +19,12 @@ public class BeatScript : MonoBehaviour
     // Inspector "public" variables
     [SerializeField] private float speed;
     [SerializeField] private Transform lineCenter; // Reference to the line's center
-    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private Text scoreText;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        scoreText = GameObject.FindGameObjectWithTag("HitInfo").GetComponent<TextMeshProUGUI>();
+        scoreText = GameObject.FindGameObjectWithTag("HitInfo").GetComponent<Text>();
         lineCenter = GameObject.FindGameObjectWithTag("Line").transform;
 
         beatPressButton = types[beatType];
@@ -43,21 +43,18 @@ public class BeatScript : MonoBehaviour
             if (accuracy > 0.8f)
             {
                 Instantiate(scoreText);
-
-                scoreText.text = "HIT";
+                scoreText.text = "PERFECT";
             }
 
             if (accuracy > 0.6f && accuracy < 0.8f)
             {
                 Instantiate(scoreText);
-
                 scoreText.text = "eh";
             }
 
             if (accuracy <= 0.6f)
             {
                 Instantiate(scoreText);
-
                 scoreText.text = "S H I T";
             }
 
