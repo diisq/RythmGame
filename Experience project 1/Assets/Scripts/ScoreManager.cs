@@ -35,7 +35,7 @@ public class ScoreManager : MonoBehaviour
             scorePercent = 0;
         }
 
-        scorePercentText.text = $"Score: {scorePercent * 100f:F2}";
+        scorePercentText.text = $"Accuracy: {scorePercent * 100f:F2}%";
 
     }
 }
