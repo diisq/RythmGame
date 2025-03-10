@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class BeatScript : MonoBehaviour
 {
@@ -43,6 +44,19 @@ public class BeatScript : MonoBehaviour
         {
             float accuracy = CalculateAccuracy();
             Debug.Log($"Hit! Accuracy: {accuracy:F2}");
+
+            if (accuracy > 0.8f)
+            {
+                ScoreManager.TotalScore += 1f;
+            }
+            else if (accuracy > 0.6f)
+            {
+                ScoreManager.TotalScore += 0.6f;
+            }
+            else
+            {
+                ScoreManager.TotalScore += 0.3f;
+            }
 
             string displayText = accuracy > 0.8f ? "PERFECT" :
                 accuracy > 0.6f ? "eh" :
