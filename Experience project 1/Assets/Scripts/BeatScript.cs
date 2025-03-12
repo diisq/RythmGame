@@ -45,6 +45,7 @@ public class BeatScript : MonoBehaviour
             float accuracy = CalculateAccuracy();
             Debug.Log($"Hit! Accuracy: {accuracy:F2}");
 
+          
             if (accuracy > 0.8f)
             {
                 ScoreManager.TotalScore += 1f;
@@ -53,15 +54,18 @@ public class BeatScript : MonoBehaviour
             {
                 ScoreManager.TotalScore += 0.6f;
             }
-            else
+            else if (accuracy > 0.3)
             {
                 ScoreManager.TotalScore += 0.3f;
             }
+            else
+            {
+                ScoreManager.TotalScore += 0.2f;
+            }
 
             string displayText = accuracy > 0.8f ? "PERFECT" :
-                accuracy > 0.6f ? "eh" :
-                "shit";
-
+                     accuracy > 0.6f ? "eh" :
+                     accuracy > 0.2f ? "shit" : "MISS";
             // Instantiate the text
             var t = Instantiate(scoreText, canv.transform);
             t.text = displayText;
