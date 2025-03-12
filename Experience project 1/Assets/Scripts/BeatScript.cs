@@ -74,6 +74,13 @@ public class BeatScript : MonoBehaviour
             t.rectTransform.anchoredPosition = fixedTextSpawnPosition;
             Destroy(gameObject);
         }
+        else if (isInRange && Input.anyKeyDown)
+        {
+            if (!Input.GetKeyDown(beatPressButton))
+            {
+                ScoreManager.TotalScore -= 0.5f;
+            }
+        }
 
     }
 
