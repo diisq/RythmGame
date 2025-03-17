@@ -11,6 +11,8 @@ TagManager:
   - K Beat
   - L Beat
   - Canv
+  - Beat Slide
+  - Slide End
   layers:
   - Default
   - TransparentFX

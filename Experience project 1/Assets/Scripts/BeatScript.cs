@@ -26,6 +26,7 @@ public class BeatScript : MonoBehaviour
     [SerializeField] private Vector2 scoreTextSpawn;
     [SerializeField] private Canvas canv;
     [SerializeField] private Vector2 fixedTextSpawnPosition;
+    
 
     private void Start()
     {
@@ -64,8 +65,8 @@ public class BeatScript : MonoBehaviour
             }
 
             string displayText = accuracy > 0.8f ? "PERFECT" :
-                     accuracy > 0.6f ? "eh" :
-                     accuracy > 0.2f ? "shit" : "MISS";
+                     accuracy > 0.6f ? "good" :
+                     accuracy > 0.2f ? "bad" : "MISS";
             // Instantiate the text
             var t = Instantiate(scoreText, canv.transform);
             t.text = displayText;
