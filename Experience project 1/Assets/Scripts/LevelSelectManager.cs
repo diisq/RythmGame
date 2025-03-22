@@ -12,7 +12,7 @@ public class LevelSelectManager : MonoBehaviour
 
     public void Level1()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Level1");
     }
 
     public void Back()

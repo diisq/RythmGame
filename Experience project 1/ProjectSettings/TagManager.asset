@@ -13,6 +13,7 @@ TagManager:
   - Canv
   - Beat Slide
   - Slide End
+  - slide_end
   layers:
   - Default
   - TransparentFX

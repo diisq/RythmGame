@@ -9,13 +9,13 @@ public class ScoreManager : MonoBehaviour
     private List<GameObject> TotalBeats = new List<GameObject>();
     public static float TotalScore;
     private int totalBeatCount;
-    private float scorePercent;
+    public static float scorePercent;
     [SerializeField] private Text scorePercentText;
 
     private void Start()
     {
         TotalBeats.Clear();
-        string[] tags = { "J Beat", "L Beat", "K Beat" };
+        string[] tags = { "J Beat", "L Beat", "K Beat", "Beat Slide" };
 
         foreach (string tag in tags)
         {

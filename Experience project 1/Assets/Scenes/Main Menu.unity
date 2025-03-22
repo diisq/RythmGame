@@ -1285,7 +1285,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1524733741}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1404,7 +1404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: i'll think of the name later
+  m_Text: Untitled Rhythm Game
 --- !u!222 &1914030432
 CanvasRenderer:
   m_ObjectHideFlags: 0
